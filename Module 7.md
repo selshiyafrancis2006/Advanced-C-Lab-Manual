@@ -1,3 +1,6 @@
+## NAME : SELSHIYA F
+## REG NO : 212224060241
+
 EXP NO:1 C PROGRAM FOR ARRAY OF STRUCTURE TO CHECK ELIGIBILITY FOR THE VACCINE.
 
 Aim:
@@ -15,14 +18,29 @@ Else
 6.	Return 0
  
 Program:
+```
+#include<stdio.h> 
+struct eligible
+{
+int age; char n[4];
+};
+int main()
+{
+struct eligible; scanf("%d%s",&e.age,e.n);
+if(e.age<=6)
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
+} 
+else
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
 
-//type your code here
-
-
+}
+}
+```
 Output:
 
-//paste your output here
-
+![image](https://github.com/user-attachments/assets/00b4e21f-c33e-48ac-b3bc-89409de90b2d)
 
 Result:
 Thus, the program is verified successfully. 
@@ -43,19 +61,27 @@ Algorithm:
 7.	Return 0
  
 Program:
-
-//type your code here
-
-
-
-
+```
+#include<stdio.h>
+struct numbers
+{
+  int a;
+  int b;
+}n;
+int add(struct numbers n);
+int main()
+{
+  scanf("%d %d ",&n.a,&n.b);
+  printf("%d",add(n));
+}
+int add(struct numbers n)
+{
+return n.a+n.b;
+}
+```
 Output:
 
-
-//paste your output here
-
-
-
+![image](https://github.com/user-attachments/assets/4890a0fc-4082-418f-a83d-575e41834c35)
 
 Result:
 Thus, the program is verified successfully
@@ -85,26 +111,22 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
-
-//type your code here
-
-
-
-
+```
+#include <stdio.h>
+int main()
+{
+ FILE *p;
+ char name[30];
+ scanf("%s",name);
+ printf("%s File Created Successfully",name); 
+ p=fopen("name","w");
+ printf("\n%s File Opened",name);
+ fclose(p);
+ printf("\n%s File Closed",name);
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/8f6948e6-5791-4fdc-862a-f44a33b281a3)
 
 Result:
 Thus, the program is verified successfully
@@ -132,26 +154,29 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
-
-//type your code here
-
-
-
-
+```
+#include <stdio.h>
+int main()
+{
+FILE *p;
+char name[20];
+int num;
+char text[50];
+scanf("%s%d",name,&num);
+p=fopen("name","w");
+printf("%s Opened",name);
+for(int i=0;i<num;i++)
+{
+scanf("%s",text); fputs(text,p);
+}
+printf("\nData added Successfully");
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/aa2f166d-8964-4848-96bf-e9488125c6b6)
 
 Result:
 Thus, the program is verified successfully
-
-
 
 Ex No 5 : C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
 
@@ -186,21 +211,38 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
-
-//type your code here
-
-
-
-
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Subject
+{
+char name[20];
+int marks;
+};
+int main()
+{
+int i,n;
+scanf("%d",&n);
+struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+if(s==NULL)
+{
+printf("Memory Alocation Failed\n");
+return 1;
+}
+for(i=0;i<n;i++)
+{
+scanf("%s %d",s[i].name,&s[i].marks);
+}
+for(i=0;i<n;i++)
+{
+printf("%s  %d\n",s[i].name,s[i].marks);
+}
+free (s); 
+return 0;
+}
+```
 Output:
-
-
-//paste your output here
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/51e105d8-b091-4878-af93-5cdbba5efaab)
 
 Result:
 Thus, the program is verified successfully
